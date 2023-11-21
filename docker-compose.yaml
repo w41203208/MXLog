@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  srs-manager:
+    container_name: xlog
+    image: "xlog:test"
+    volumes:
+      - .:/app
