@@ -27,6 +27,9 @@
 
 #### structure design
 
+- limit the number of goroutines at the same time [Ref](https://github.com/sourcegraph/conc/tree/main)
+  
+
 - use pool to decrease GC loading  ✅
 
 - maybe use command pattern to refactor new message process ✅
@@ -37,8 +40,4 @@
   - Take a NewFactoryFunc into NewXLogFunc
   - execute it in the NewXLogFunc and store it into XLog
 
-- link to another log api like loki promtail push api
-
-### Loki promtail push pai
-
-- [promtail push api](https://grafana.com/docs/loki/latest/community/design-documents/2020-02-promtail-push-api/)
+- link to another log api like loki promtail push api [Ref](https://grafana.com/docs/loki/latest/community/design-documents/2020-02-promtail-push-api/)
