@@ -15,19 +15,29 @@
 
 ### Design
 
+#### log view
+
 - string format
 
   ```
   [level] date time codedetail messagebody
   ```
 
-- use pool to decrease GC loading
+- can set codedetail what content display
 
-- maybe use command pattern to refactor new message process
+#### structure design
+
+- use pool to decrease GC loading  ✅
+
+- maybe use command pattern to refactor new message process ✅
+
+- get log async and get log sync 
 
 - how to let message factory can get some attribute that it is necessary to create new message.
   - Take a NewFactoryFunc into NewXLogFunc
   - execute it in the NewXLogFunc and store it into XLog
+
+- link to another log api like loki promtail push api
 
 ### Loki promtail push pai
 

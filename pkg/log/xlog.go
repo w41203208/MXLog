@@ -135,6 +135,7 @@ func (xl *XLog) LogTrace(msg string, Fields ...interface{}) {
 	xl.logCheck(level.TraceLevel, msg)
 }
 
+// check it can create XMessage
 func (xl *XLog) logCheck(level level.XLevel, msg string) {
 	if xl.level > level {
 		return
