@@ -23,12 +23,22 @@ func (q *Queue[T]) Push(x T) {
 }
 
 func (q *Queue[T]) Pop() T {
-	len := len(q.list)
-	var el T
-	q.rwMu.RLock()
-	el, q.list = q.list[0], q.list[1:len]
-	q.rwMu.RUnlock()
-	return el
+       q.rwMu.Lock()
+       length := len(q.list)
+       var el T
+       el, q.list = q.list[0], q.list[1:length]
+       q.rwMu.Unlock()
+       return el
+}
+
+func (q *Queue[T]) Top() T {
+       q.rwMu.RLock()
+       var el T
+       if len(q.list) > 0 {
+               el = q.list[0]
+       }
+       q.rwMu.RUnlock()
+       return el
 }
 
 func (q *Queue[T]) Length() int {
